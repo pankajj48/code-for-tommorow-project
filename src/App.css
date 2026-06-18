@@ -1,0 +1,157 @@
+*{
+ box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(174, 211, 249, 0.367);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.app-conatiner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1{
+  text-align: center;
+  color: #333;
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card{
+  background: rgb(251, 250, 250);
+  padding: 1.25rem;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  height: 100%;
+}
+.card:hover{
+  box-shadow: 0 8px 10px rgba(0,0,0,0.4);
+  transition: .4s ease-in-out;
+}
+
+.card h3{
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom:0.5rem;
+  text-align: start;
+}
+
+.card p{
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card-body{
+  min-height: calc(1.4em * 3);
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card-media{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-media img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-date{
+  font-size: 0.85rem;
+  color: #777;
+  text-align: left;
+}
+
+@media (max-width: 1024px){
+  .card-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px){
+  .card-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.delete-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.delete-btn:hover{
+  background-color: #959595;
+  border-radius: 50%;
+}
+
+.Pagination{
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.Pagination button{
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+  border-radius: 5rem;
+}
+
+.Pagination button:hover:not(:disabled){
+  background: #f0f0f0;
+}
+.Pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+}
+.Pagination button.active{
+  background: #007bff;
+  color: black;
+  border-color: #007bff;
+}
